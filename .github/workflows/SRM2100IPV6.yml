@@ -17,9 +17,7 @@ on:
      types: started                                          # 点击 star 之后
 env:
   T_NAME: "SRM2100IPV6"                                          # 设备名字 (op编译慢所以直接单个的编译)
-  BASE_PATH: openwrt                                        # 基础目录
   FEEDS_CONF: feeds.conf.default                     
-  PUBLIC_PATH: public                                       # 公共目录
   PUBLIC_SH: public.sh                                      # 公共执行文件
   SSH_ACTIONS: true                                         # 使用SSH图形编译 ture or false
   UPLOAD_PACKAGES_DIR: true                                 # 是否导出bin文件
@@ -27,12 +25,6 @@ env:
   CLONE_URL: https://github.com/coolsnowwolf/lede           # 源码地址
   CLONE_BRANCH: master                                      # 分支
   WORK_PATH: opt/openwrt                                    # 工作目录
-  device_name: MiRouter                                     # 自定义设备名
-  wifi_name: RMWiFi                                         # 自定义Wifi 名字
-  lan_ip: 192.168.2.1                                       # 自定义Lan Ip地址
-  utc_name: Asia\/Shanghai                                  # 自定义时区
-  ver_name: D200514                                         # 版本号  
-  default_theme: luci-theme-argon_new                       # 默认主题 结合主题文件夹名字
 
 jobs:
   build:
@@ -67,7 +59,7 @@ jobs:
         
     - name: Install public.sh  # 5. 加载配置文件 并且安装 Feeds
       run: |
-        [ -f $BASE_PATH/$PUBLIC_PATH/$PUBLIC_SH ] && cp -f $BASE_PATH/$PUBLIC_PATH/$PUBLIC_SH $WORK_PATH
+        [ -f $PUBLIC_SH ] && cp -f $PUBLIC_SH $WORK_PATH
         cd $WORK_PATH
         echo "执行${PUBLIC_SH}"
         chmod +x ./$PUBLIC_SH
@@ -77,8 +69,8 @@ jobs:
         
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
       run: |
-        [ -f $BASE_PATH/$T_NAME/banner ] && cp -f $BASE_PATH/$T_NAME/banner $WORK_PATH/package/base-files/files/etc/banner
-        [ -f $BASE_PATH/$T_NAME/.config ] && cp -f $BASE_PATH/$T_NAME/.config $WORK_PATH/.config                   
+        [ -f $T_NAME/banner ] && cp -f $T_NAME/banner $WORK_PATH/package/base-files/files/etc/banner
+        [ -f $T_NAME/.config ] && cp -f $T_NAME/.config $WORK_PATH/.config                   
         ./scripts/feeds update -a
         ./scripts/feeds install -a
     
