@@ -13,8 +13,8 @@ on:
   #     - openwrt/*                                         # 监听openwrt目录下所有文件的push操作
     paths:                                                  # 路径
       - logs/g-dock.md                                      # 监听logs目录下 k2.md 的push操作
-#  watch:                                                    # 监视操作
-#      types: started                                          # 点击 star 之后
+  watch:                                                    # 监视操作
+      types: started                                          # 点击 star 之后
 env:
   T_NAME: "RM2100IPV6"                                          # 设备名字 (op编译慢所以直接单个的编译)
   FEEDS_CONF: feeds.conf.default                     
@@ -70,7 +70,6 @@ jobs:
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
       run: |
         [ -f $T_NAME/banner ] && cp -f $T_NAME/banner $WORK_PATH/package/base-files/files/etc/banner
-        [ -f $T_NAME/.config ] && cp -f $T_NAME/.config $WORK_PATH/.config 
          cd $WORK_PATH
         ./scripts/feeds update -a
         ./scripts/feeds install -a
