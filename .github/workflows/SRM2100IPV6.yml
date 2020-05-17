@@ -72,7 +72,6 @@ jobs:
         [ -f $T_NAME/banner ] && cp -f $T_NAME/banner $WORK_PATH/package/base-files/files/etc/banner
         [ -f $T_NAME/.config ] && cp -f $T_NAME/.config $WORK_PATH/.config 
         cd $WORK_PATH               
-        ./scripts/feeds update -a
         ./scripts/feeds install -a
     
  #   - name: SSH connection to Actions          
