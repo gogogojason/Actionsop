@@ -64,7 +64,6 @@ jobs:
         echo "执行${PUBLIC_SH}"
         chmod +x ./$PUBLIC_SH
         sudo ./$PUBLIC_SH                       
-        ./scripts/feeds update -a
         ./scripts/feeds install -a
         
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
