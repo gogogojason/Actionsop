@@ -70,7 +70,6 @@ jobs:
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
       run: |
         [ -f $T_NAME/banner ] && cp -f $T_NAME/banner $WORK_PATH/package/base-files/files/etc/banner
-
          cd $WORK_PATH
         ./scripts/feeds update -a
         ./scripts/feeds install -a
