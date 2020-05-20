@@ -57,11 +57,6 @@ jobs:
         cd $WORK_PATH
         ./scripts/feeds update -a
 
-    - name: Download Other packages                   # 4.下载其他软件
-      run: |
-        cd $WORK_PATH
-        git clone https://github.com/gogogojason/luci-app-vssr-plus package/luci-app-vssr-plus
-        git clone https://github.com/gogogojason/diy.git package/diy 
     
     - name: Install public.sh  # 5. 加载配置文件 并且安装 Feeds
       run: |
@@ -72,6 +67,12 @@ jobs:
         sudo ./$PUBLIC_SH                       
         ./scripts/feeds update -a
         ./scripts/feeds install -a
+        
+    - name: Download Other packages                   # 4.下载其他软件
+      run: |
+        cd $WORK_PATH
+        git clone https://github.com/gogogojason/luci-app-vssr-plus package/luci-app-vssr-plus
+        git clone https://github.com/gogogojason/diy.git package/diy 
         
         
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
