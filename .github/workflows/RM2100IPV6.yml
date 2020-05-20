@@ -72,7 +72,7 @@ jobs:
       run: |
         cd $WORK_PATH
         git clone https://github.com/gogogojason/luci-app-vssr-plus package/luci-app-vssr-plus
-        git clone https://github.com/gogogojason/diy.git package/diy 
+        git clone https://github.com/gogogojason/my.git package/my
         
         
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
