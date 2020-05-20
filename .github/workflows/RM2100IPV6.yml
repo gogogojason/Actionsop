@@ -61,7 +61,7 @@ jobs:
       run: |
         cd $WORK_PATH
         git clone https://github.com/Leo-Jo-My/luci-app-vssr-plus package/luci-app-vssr-plus
-        git clone https://github.com/Leo-Jo-My/diy package/diy  #依赖包
+        git clone https://github.com/Leo-Jo-My/diy.git package/diy  
     
     - name: Install public.sh  # 5. 加载配置文件 并且安装 Feeds
       run: |
