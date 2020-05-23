@@ -46,7 +46,7 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 
 
 echo "修改版本信息"
-sed -i "s/R20.5.9/R20.5.9\/hfy166 Ver.$ver_name/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/R20.5.20/R20.5.20\/hfy166 Ver.$ver_name/g" package/lean/default-settings/files/zzz-default-settings
 
 #echo '添加serverchan'
 #git clone $serverchan_url package/luci-app-serverchan
