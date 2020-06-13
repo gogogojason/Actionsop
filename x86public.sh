@@ -29,8 +29,8 @@ sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.
 echo "设置lan ip"
 sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
 
-echo "修改argon主题背景色"
-sed -i "s/#5e72e4/#00C000/g" feeds/otherpackges/luci-theme-argon_new/luasrc/view/themes/argon/header.htm
+#echo "修改argon主题背景色"
+#sed -i "s/#5e72e4/#00C000/g" feeds/otherpackges/luci-theme-argon_new/luasrc/view/themes/argon/header.htm
 
 echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
@@ -89,14 +89,14 @@ git clone $adguardhome_url package/lean/luci-app-adguardhome
 echo '添加HelloWord,并使用包默认的配置'  # TODO 这个的配置文件和SSP 冲突
 git clone $vssr_url_rely package/lean/lua-maxminddb
 git clone $vssr_url package/lean/luci-app-vssr
-echo 'CONFIG_PACKAGE_luci-app-vssr=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-vssr-zh-cn=y'  >> .config
+#echo 'CONFIG_PACKAGE_luci-app-vssr=y' >> .config
+#echo 'CONFIG_PACKAGE_luci-i18n-vssr-zh-cn=y'  >> .config
 
 #echo '添加Lienol包'
 #git clone $lienol_url package/Lienol
 
-#echo '添加OpenAppFilter过滤器'
-#git clone $filter_url package/OpenAppFilter
+echo '添加OpenAppFilter过滤器'
+git clone $filter_url package/OpenAppFilter
 #echo 'CONFIG_PACKAGE_luci-app-oaf=y' >> .config
 #echo 'CONFIG_PACKAGE_kmod-oaf=y' >> .config
 #echo 'CONFIG_PACKAGE_appfilter=y' >> .config
