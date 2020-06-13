@@ -2,7 +2,7 @@
 # 自动编译OpenWrt固件脚本 #
 # # # # # # # # # # # # #
 
-name: x86-64test1
+name: RM2100IPV6
 on:
   # schedule:                                               # 时间表
   #   - cron: '0 19 * * *'                                  # 每天国际时间19点，北京时间凌晨3点执行(北京+8)
@@ -12,13 +12,13 @@ on:
   #   paths:                                                # 路径
   #     - openwrt/*                                         # 监听openwrt目录下所有文件的push操作
     paths:                                                  # 路径
-      - logs/g-dock.md                                      # 监听logs目录下 k2.md 的push操作
-#  watch:                                                    # 监视操作
-#      types: started                                          # 点击 star 之后
+      - logs/g-dock.md                                      # 监听logs目录下 k2.md 的push操作#
+  watch:                                                    # 监视操作
+      types: started                                          # 点击 star 之后
 env:
-  T_NAME: "x86"                                          # 设备名字 (op编译慢所以直接单个的编译)
+  T_NAME: "X86"                                          # 设备名字 (op编译慢所以直接单个的编译)
   FEEDS_CONF: feeds.conf.default                     
-  PUBLIC_SH: x86public.sh                                   # 公共执行文件
+  PUBLIC_SH: x86public.sh                                      # 公共执行文件
   SSH_ACTIONS: true                                         # 使用SSH图形编译 ture or false
   UPLOAD_PACKAGES_DIR: true                                 # 是否导出bin文件
   UPLOAD_FIRMWARE: true                                     # 是否导出固件
@@ -56,7 +56,8 @@ jobs:
         mv $FEEDS_CONF $WORK_PATH/feeds.conf.default
         cd $WORK_PATH
         ./scripts/feeds update -a
- 
+
+    
     - name: Install public.sh  # 5. 加载配置文件 并且安装 Feeds
       run: |
         [ -f $PUBLIC_SH ] && cp -f $PUBLIC_SH $WORK_PATH
@@ -66,7 +67,7 @@ jobs:
         sudo ./$PUBLIC_SH                       
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        
+             
     - name: Load Config  And Install Feeds  # 5. 加载配置文件 并且安装 Feeds
       run: |
         [ -f $T_NAME/banner ] && cp -f $T_NAME/banner $WORK_PATH/package/base-files/files/etc/banner
