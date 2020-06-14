@@ -82,9 +82,6 @@ git clone $adguardhome_url package/lean/luci-app-adguardhome
 #echo 'CONFIG_PACKAGE_luci-app-adguardhome=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y'  >> .config
 
-#echo '添加filebrowser'
-#echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >> .config
-#echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y'  >> .config
 
 echo '添加HelloWord,并使用包默认的配置'  # TODO 这个的配置文件和SSP 冲突
 git clone $vssr_url_rely package/lean/lua-maxminddb
@@ -92,8 +89,12 @@ git clone $vssr_url package/lean/luci-app-vssr
 #echo 'CONFIG_PACKAGE_luci-app-vssr=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-i18n-vssr-zh-cn=y'  >> .config
 
-#echo '添加Lienol包'
-#git clone $lienol_url package/Lienol
+echo '添加Lienol包'
+git clone $lienol_url package/Lienol
+
+echo '添加filebrowser'
+echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >> .config
+echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y'  >> .config
 
 echo '添加OpenAppFilter过滤器'
 git clone $filter_url package/OpenAppFilter
