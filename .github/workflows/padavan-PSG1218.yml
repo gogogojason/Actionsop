@@ -1,8 +1,4 @@
-# # # # # # # # # # #
-#  自动构建 PSG1218
-#     花妆男
-# # # # # # # # # # #
-name: Padavan CI PSG1218
+name: RM2100-Padavan
 on:
   # schedule:                           # 时间表
   #   - cron: '0 19 * * *'              # 每天国际时间19点，北京时间凌晨3点执行(北京+8)
@@ -16,7 +12,7 @@ on:
   # watch:                              # 监视操作
   #   types: [started]                  # 点击 star 之后
 env:
-  T_NAMES: "PSG1218"        # 设备名字数组
+  T_NAMES: "RM2100"        # 设备名字数组
   BASE_PATH: padavan                # 基础目录
   PUBLIC_PATH: public               # 公共目录
   VERSION_FILE: versions.inc        # 版本后缀
@@ -102,4 +98,3 @@ jobs:
       with:
         name: Padavan-${{env.FILE_NAME}}
         path: ${{ env.IMAGES_PATH }}
-
