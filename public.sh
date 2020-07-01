@@ -29,8 +29,8 @@ sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.
 echo "设置lan ip"
 sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
 
-echo "修改argon主题背景色"
-sed -i "s/#5e72e4/#00C000/g" feeds/otherpackges/luci-theme-argon_new/luasrc/view/themes/argon/header.htm
+#echo "修改argon主题背景色"
+#sed -i "s/#5e72e4/#00C000/g" feeds/otherpackges/luci-theme-argon_new/luasrc/view/themes/argon/header.htm
 
 echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
