@@ -4,7 +4,7 @@ device_name='MiRouter'                                                      # �
 wifi_name="RMWiFi"                                                          # 自定义Wifi 名字
 lan_ip='192.168.2.1'                                                        # 自定义Lan Ip地址
 utc_name='Asia\/Shanghai'                                                   # 自定义时区
-ver_name='D200628'                                                          # 版本号
+ver_name='D200701'                                                          # 版本号
 delete_bootstrap=false                                                      # 是否删除默认主题 true 、false
 default_theme='luci-theme-argon_new'                                        # 默认主题 结合主题文件夹名字
 theme_argon='https://github.com/sypopo/luci-theme-argon-mc.git'             # 主题地址
@@ -42,7 +42,7 @@ sed -i "s/bootstrap/argon/g" feeds/luci/modules/luci-base/root/etc/config/luci
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 
 echo "修改版本信息"
-sed -i "s/R20.6.18/R20.6.18\/hfy166 Ver.$ver_name/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/R20.7.1/R20.7.1\/hfy166 Ver.$ver_name/g" package/lean/default-settings/files/zzz-default-settings
 
 #echo '添加serverchan'
 #git clone $serverchan_url package/luci-app-serverchan
