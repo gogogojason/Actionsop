@@ -48,8 +48,8 @@ sed -i "s/R20.7.7/R20.7.7\/hfy166 Ver.$ver_name/g" package/lean/default-settings
 #git clone $serverchan_url package/luci-app-serverchan
 #echo 'CONFIG_PACKAGE_luci-app-serverchan=y' >> .config
 
-#echo '添加主题argon'
-#git clone $theme_argon package/lean/luci-theme-argon-mc
+echo '添加主题argon'
+git clone $theme_argon package/lean/luci-theme-argon
 #echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
 #echo '添加luci-app-smartdns'
