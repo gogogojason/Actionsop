@@ -28,6 +28,8 @@ echo "修改wifi名称"
 #sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i "s/OpenWrt_2G/$wifi_name/g" package/lean/mt/drivers/mt_wifi/files/mt7603.dat
 sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt_wifi/files/mt7612.dat
+sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt7615d/files/mt7615.1.5G.dat
+sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt7615d/files/mt7615.2.dat
 sed -i "s/MTK_AP3/$wifi_name5g/g" package/lean/mt/drivers/mt_wifi/files/mt7615.dat
 
 echo "设置lan ip"
