@@ -6,7 +6,7 @@ lan_ip='192.168.2.1'                                                        # �
 utc_name='Asia\/Shanghai'                                                   # 自定义时区
 ver_name='D200710'                                                          # 版本号
 delete_bootstrap=false                                                      # 是否删除默认主题 true 、false
-default_theme='luci-theme-argon'                                        # 默认主题 结合主题文件夹名字
+default_theme='luci-theme-argonblue'                                        # 默认主题 结合主题文件夹名字
 theme_argon='https://github.com/jerrykuku/luci-theme-argon.git'             # 主题地址
 openClash_url='https://github.com/vernesong/OpenClash.git'                  # OpenClash包地址
 adguardhome_url='https://github.com/rufengsuixing/luci-app-adguardhome.git' # adguardhome 包地址
@@ -36,7 +36,7 @@ echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
 echo "修改默认主题"
-sed -i 's/+luci-theme-bootstrap/+luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/+luci-theme-bootstrap/+luci-theme-argonblue/g' feeds/luci/collections/luci/Makefile
 sed -i "s/bootstrap/argon/g" feeds/luci/modules/luci-base/root/etc/config/luci
 #sed -i '/\+luci-theme-bootstrap/d' package/feeds/luci/luci/Makefile
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
@@ -49,7 +49,7 @@ sed -i "s/R20.7.7/R20.7.7\/hfy166 Ver.$ver_name/g" package/lean/default-settings
 #echo 'CONFIG_PACKAGE_luci-app-serverchan=y' >> .config
 
 echo '添加主题argon'
-git clone $theme_argon package/lean/luci-theme-argon
+git clone $theme_argon package/lean/luci-theme-argonblue
 #echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
 #echo '添加luci-app-smartdns'
