@@ -2,6 +2,7 @@
 # 定义部分以及需要添加对应APP必须的文件
 device_name='MiRouter'                                                      # 自定义设备名
 wifi_name="RMWiFi"                                                          # 自定义Wifi 名字
+wifi_name5g="RMWiFi_5G"                                                          # 自定义Wifi 名字
 lan_ip='192.168.2.1'                                                        # 自定义Lan Ip地址
 utc_name='Asia\/Shanghai'                                                   # 自定义时区
 ver_name='D200710'                                                          # 版本号
@@ -24,7 +25,10 @@ echo "修改机器名称"
 sed -i "s/OpenWrt/$device_name/g" package/base-files/files/bin/config_generate
 
 echo "修改wifi名称"
-sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i "s/OpenWrt_2G/$wifi_name/g" package/lean/mt/drivers/mt_wifi/files/mt7603.dat
+sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt_wifi/files/mt7612.dat
+sed -i "s/MTK_AP3/$wifi_name5g/g" package/lean/mt/drivers/mt_wifi/files/mt7615.dat
 
 echo "设置lan ip"
 sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
