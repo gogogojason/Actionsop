@@ -8,7 +8,7 @@ utc_name='Asia\/Shanghai'                                                   # �
 ver_name='D200727'                                                          # 版本号
 delete_bootstrap=false                                                      # 是否删除默认主题 true 、false
 default_theme='luci-theme-edge'                                        # 默认主题 结合主题文件夹名字
-theme_argon='https://github.com/garypang13/luci-theme-edge.git'             # 主题地址
+theme_argon='https://github.com/gogogojason/luci-theme-edge.git'             # 主题地址
 #theme_argon='https://github.com/jerrykuku/luci-theme-argon.git'             # 主题地址
 openClash_url='https://github.com/vernesong/OpenClash.git'                  # OpenClash包地址
 adguardhome_url='https://github.com/rufengsuixing/luci-app-adguardhome.git' # adguardhome 包地址
@@ -59,8 +59,8 @@ sed -i "s/R20.7.20/R20.7.20\/hfy166 Ver.$ver_name/g" package/lean/default-settin
 #git clone $serverchan_url package/luci-app-serverchan
 #echo 'CONFIG_PACKAGE_luci-app-serverchan=y' >> .config
 
-echo '添加主题argon'
-git clone $theme_argon package/lean/luci-theme-argonblue
+#echo '添加主题argon'
+#git clone $theme_argon package/lean/luci-theme-argonblue
 #echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
 #echo '添加luci-app-smartdns'
