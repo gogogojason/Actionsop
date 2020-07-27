@@ -38,6 +38,10 @@ sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
 #echo "修改argon主题背景色"
 #sed -i "s/#5e72e4/#00C000/g" feeds/otherpackges/luci-theme-argon_new/luasrc/view/themes/argon/header.htm
 
+echo '添加主题argon'
+git clone $theme_argon package/lean/luci-theme-argonblue
+#echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
+
 echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
