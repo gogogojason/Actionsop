@@ -47,10 +47,10 @@ echo "修改时区"
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
 echo "修改默认主题"
-sed -i 's/+luci-theme-bootstrap/+luci-theme-edge/g' feeds/luci/collections/luci/Makefile
+#sed -i 's/+luci-theme-bootstrap/+luci-theme-edge/g' feeds/luci/collections/luci/Makefile
 #sed -i "s/bootstrap/argon/g" feeds/luci/modules/luci-base/root/etc/config/luci
 #sed -i '/\+luci-theme-bootstrap/d' package/feeds/luci/luci/Makefile
-sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+#sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 
 echo "修改版本信息"
 sed -i "s/R20.7.20/R20.7.20\/hfy166 Ver.$ver_name/g" package/lean/default-settings/files/zzz-default-settings
