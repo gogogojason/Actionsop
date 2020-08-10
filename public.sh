@@ -5,10 +5,10 @@ wifi_name="RMWiFi"                                                          # �
 wifi_name5g="RMWiFi_5G"                                                          # 自定义Wifi 名字
 lan_ip='192.168.2.1'                                                        # 自定义Lan Ip地址
 utc_name='Asia\/Shanghai'                                                   # 自定义时区
-ver_name='D200727'                                                          # 版本号
+ver_name='D200810'                                                          # 版本号
 delete_bootstrap=false                                                      # 是否删除默认主题 true 、false
 default_theme='luci-theme-edge'                                        # 默认主题 结合主题文件夹名字
-theme_argon='https://github.com/gogogojason/luci-theme-edge.git'             # 主题地址
+#theme_argon='https://github.com/gogogojason/luci-theme-edge.git'             # 主题地址
 #theme_argon='https://github.com/jerrykuku/luci-theme-argon.git'             # 主题地址
 openClash_url='https://github.com/vernesong/OpenClash.git'                  # OpenClash包地址
 adguardhome_url='https://github.com/rufengsuixing/luci-app-adguardhome.git' # adguardhome 包地址
@@ -39,8 +39,8 @@ sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
 #echo "修改argon主题背景色"
 #sed -i "s/#5e72e4/#00C000/g" feeds/otherpackges/luci-theme-argon_new/luasrc/view/themes/argon/header.htm
 
-echo '添加主题argon'
-git clone $theme_argon package/lean/luci-theme-edge
+#echo '添加主题argon'
+#git clone $theme_argon package/lean/luci-theme-edge
 #echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >> .config
 
 echo "修改时区"
