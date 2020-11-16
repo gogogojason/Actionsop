@@ -19,6 +19,7 @@ filter_url='https://github.com/destan19/OpenAppFilter.git'                  # Ap
 smartdns_url='https://github.com/pymumu/openwrt-smartdns'                   # SmartDNS运行程序
 smartdnsapp_url='https://github.com/pymumu/luci-app-smartdns.git'           # SmartDNS-App
 serverchan_url='https://github.com/tty228/luci-app-serverchan.git'          # serverchan备份包
+upgrade_url='https://github.com/gogogojason/upgrade.git'
 
 #下面是执行具体操作
 
@@ -54,6 +55,10 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 
 echo "修改版本信息"
 sed -i "s/R20.10.20/R20.10.20\/hfy166 Ver.$ver_name/g" package/lean/default-settings/files/zzz-default-settings
+
+echo '添加在线升级'
+git clone $upgrade_url package/lean/luci-app-gpsysupgrade
+echo 'CONFIG_PACKAGE_luci-app-gpsysupgrade=y' >> .config
 
 #echo '添加serverchan'
 #git clone $serverchan_url package/luci-app-serverchan
