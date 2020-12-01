@@ -29,10 +29,11 @@ sed -i "s/OpenWrt/$device_name/g" package/base-files/files/bin/config_generate
 echo "修改wifi名称"
 #sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i "s/OpenWrt_2G/$wifi_name/g" package/lean/mt/drivers/mt_wifi/files/mt7603.dat
-sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt_wifi/files/mt7612.dat
-sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt7615d/files/mt7615.1.5G.dat
-sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt7615d/files/mt7615.2.dat
-sed -i "s/MTK_AP3/$wifi_name5g/g" package/lean/mt/drivers/mt_wifi/files/mt7615.dat
+sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt_wifi/files/mt7615.dat
+#sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt_wifi/files/mt7612.dat
+#sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt7615d/files/mt7615.1.5G.dat
+#sed -i "s/OpenWrt_5G/$wifi_name5g/g" package/lean/mt/drivers/mt7615d/files/mt7615.2.dat
+#sed -i "s/MTK_AP3/$wifi_name5g/g" package/lean/mt/drivers/mt_wifi/files/mt7615.dat
 
 echo "设置lan ip"
 sed -i "s/192.168.1.1/$lan_ip/g" package/base-files/files/bin/config_generate
@@ -56,9 +57,9 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 echo "修改版本信息"
 sed -i "s/R20.10.20/R20.10.20\/hfy166 Ver.$ver_name/g" package/lean/default-settings/files/zzz-default-settings
 
-echo '添加在线升级'
-git clone $upgrade_url package/lean/luci-app-gpsysupgrade
-echo 'CONFIG_PACKAGE_luci-app-gpsysupgrade=y' >> .config
+#echo '添加在线升级'
+#git clone $upgrade_url package/lean/luci-app-gpsysupgrade
+#echo 'CONFIG_PACKAGE_luci-app-gpsysupgrade=y' >> .config
 
 #echo '添加serverchan'
 #git clone $serverchan_url package/luci-app-serverchan
