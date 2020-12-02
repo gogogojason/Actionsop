@@ -61,8 +61,8 @@ sed -i "s/R20.10.20/R20.10.20\/hfy166 Ver.$ver_name/g" package/lean/default-sett
 #git clone $upgrade_url package/lean/luci-app-gpsysupgrade
 #echo 'CONFIG_PACKAGE_luci-app-gpsysupgrade=y' >> .config
 
-#echo '添加serverchan'
-#git clone $serverchan_url package/luci-app-serverchan
+echo '添加serverchan'
+git clone $serverchan_url package/lean/luci-app-serverchan
 #echo 'CONFIG_PACKAGE_luci-app-serverchan=y' >> .config
 
 #echo '添加主题argon'
