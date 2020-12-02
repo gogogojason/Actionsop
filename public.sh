@@ -109,8 +109,8 @@ git clone $vssr_url package/lean/luci-app-vssr
 #echo 'CONFIG_PACKAGE_luci-app-vssr=y' >> .config
 #echo 'CONFIG_PACKAGE_luci-i18n-vssr-zh-cn=y'  >> .config
 
-#echo '添加Lienol包'
-#git clone $lienol_url package/Lienol
+echo '添加Lienol包'
+git clone $lienol_url package/Lienol
 
 #echo '添加OpenAppFilter过滤器'
 #git clone $filter_url package/OpenAppFilter
