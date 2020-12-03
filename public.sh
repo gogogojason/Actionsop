@@ -1,11 +1,11 @@
 # cd $WORK_PATH 目录下,先运行的 public.h -> 设备.h -> scripts/feeds install -a
 # 定义部分以及需要添加对应APP必须的文件
-device_name='MiRouter'                                                      # 自定义设备名
+device_name='MyRouter'                                                      # 自定义设备名
 wifi_name="RMWiFi"                                                          # 自定义Wifi 名字
 wifi_name5g="RMWiFi_5G"                                                          # 自定义Wifi 名字
 lan_ip='192.168.2.1'                                                        # 自定义Lan Ip地址
 utc_name='Asia\/Shanghai'                                                   # 自定义时区
-ver_name='D201203'                                                          # 版本号
+ver_name='D201204'                                                          # 版本号
 delete_bootstrap=false                                                      # 是否删除默认主题 true 、false
 default_theme='luci-theme-edge'                                        # 默认主题 结合主题文件夹名字
 theme_argon='https://github.com/gogogojason/luci-theme-edge -b 18.06'             # 主题地址
