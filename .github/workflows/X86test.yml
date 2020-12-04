@@ -62,7 +62,7 @@ jobs:
         df -hT $PWD
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         
-    - name: Update Feeds                    # 4.下载Feeds
+    - name: Move Feeds                    # 4.下载Feeds
       run: |
         mv $FEEDS_CONF openwrt/feeds.conf.default
         cd openwrt
@@ -89,8 +89,7 @@ jobs:
         chmod +x scripts/*.sh
         cd $OPENWRTROOT
         ../$DIY_SH
-        ../scripts/preset-clash-core.sh amd64
-        ../scripts/preset-terminal-tools.sh
+
     - name: Download Package
       id: package
       run: |
