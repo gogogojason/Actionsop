@@ -75,12 +75,16 @@ jobs:
         sed -i 's/coolsnowwolf\/luci/Lienol\/openwrt-luci.git;18.06/g' feeds.conf.default
         ./scripts/feeds update -a
  
-    - name: Install Feeds
+    - name: Install DIY
       run: |
         cd $OPENWRTROOT
         ../$DIY_SH
-        ./scripts/feeds install -a
         
+    - name: Install Feeds
+      run: |
+        cd $OPENWRTROOT
+        ./scripts/feeds install -a
+      
     - name: Load Custom Configuration
       run: |
         [ -e files ] && mv files $OPENWRTROOT/files
