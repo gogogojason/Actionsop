@@ -62,12 +62,10 @@ jobs:
         df -hT $PWD
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         
-    - name: Move Feeds                    # 4.下载Feeds
+    - name: Move Feeds                   # 4.下载Feeds
       run: |
         mv $FEEDS_CONF openwrt/feeds.conf.default
-        cd openwrt
-        ./scripts/feeds update -a
-   
+           
     - name: Update Feeds
       id: update
       run: |
