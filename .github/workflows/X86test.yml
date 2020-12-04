@@ -173,14 +173,14 @@ jobs:
       if: steps.generate.outputs.GENERATE_STATUS == 'success'
       with:
         name: bin-archive
-        path: openwrt/bin
+        path: $WORK_PATH/bin
         
     - name: Upload DL Folder
       uses: actions/upload-artifact@main
       if: steps.generate.outputs.GENERATE_STATUS == 'success'
       with:
         name: dl-archive
-        path: openwrt/dl
+        path: $WORK_PATH/dl
 
   Upload:
     needs: [Build]
